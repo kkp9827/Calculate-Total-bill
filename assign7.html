@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+   .header
+   {
+      background-color: black;
+      background-image: url(images/DOminos.jpg);
+      height: 400px;
+      width: 100%;
+   }
+   .body
+   {
+      background-color: orange;
+      height: 700px;
+      width: 100%;
+   }
+	.piz
+	 {
+	   margin-left: 550px;
+  		margin-top: 30px;
+  		font-size: 19px;
+
+     }
+     .topp
+     {  
+     	margin-left: 7px;
+     	margin-top: 30px;
+     	font-size: 19px;
+
+     }
+     .chezz
+     {  
+     	margin-left: 7px;
+     	margin-top: 30px;
+     	font-size: 19px;
+     }
+     .drink
+     { 
+     	
+     	
+     	margin-top: 30px;
+     	font-size: 19px;
+     } 
+     .pri
+     {
+     	margin-left: 600px;
+     	margin-top: 30px;
+
+     }
+     .some
+     {
+     	margin-left: 600px;
+     	margin-top: 15px;
+     }
+
+	</style>
+
+	<script type="text/javascript">
+
+		function getData()
+		{
+			var drink=document.getElementById("drink").value;
+         var drinkarr=drink.split("-");
+         var cheeze=document.getElementById("Cheeze").value;
+         var cheezearr=cheeze.split("-");
+         document.getElementById("result").innerHTML="<table><tr><th>Item</th><th>Price</th></tr>"+"<tr><td>"+drinkarr[0]+"</td><td>"+drinkarr[1]+"<tr><td>"+cheezearr[0]+"</td><td>"+cheezearr[1]+"</td></tr>"+"<tr><th>Total</th><th>"+(parseInt(cheezearr[1])+parseInt(drinkarr[1]))+"</th></tr></table>";       
+		} 
+
+      function getPrint()
+      {
+      	window.print();
+      }
+  
+	</script>
+   
+</head>
+<body>
+   <div class="header">  
+   </div>
+   <div class="body">
+<div class="piz">
+	<h3><b>Pizza Size - </b></h3>
+ <select onchange="getData(this.value)" style="height:30px;width:30%;">
+
+    <option value="0"><h3>Regular</h3></option>
+	<option value="1"><h3>Medium</h3></option>
+	<option value="2"><h3>Large</h3></option>
+ </select> <br>
+      <div class="topp"> 
+           <h3><b> Toppings   - </b></h3>
+ <select  style="height:30px;width:30%;">
+     
+    <option value="0"><h3>Paneer</h3></option>
+	<option value="1"><h3>Masroom</h3></option>
+	<option value="2"><h3>chilly</h3></option>
+ </select><br>
+    <div class="chezz">
+           <h3><b>  Cheeze  - </b></h3>
+ <select  style="height:30px;width:30%;" id="Cheeze">
+    <option value="Mozzarella-67"><h3>Mozzarella</h3></option>
+	<option value="Emmental-120"><h3>Emmental</h3></option>
+	<option value="cheddar-80"><h3>Cheddar</h3></option>
+ </select><br>
+    <div class="drink">
+         <h3><b>Coldrink - </b></h3>
+ <select id="drink" style="height:30px;width:30%;">
+    <option value="Coco Cola-70"><h3>Coco cola(2 lt.)</h3></option>
+	<option value="Slice-78"><h3>slice</h3></option>
+	<option value="Thums Up-98"><h3>Thums up</h3></option>
+</select><br>
+<div id="result">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="some">
+<tr><th><b>Bill</b></th><td><div id="result"></div></td></tr> <br>
+<tr><td><input type="button" value="Bill" onclick="getData()"></td></tr>
+</div> <br>
+<div class="pri"><button onclick="getPrint()">Print</button></div>
+</div>
+</body>
+</html>
